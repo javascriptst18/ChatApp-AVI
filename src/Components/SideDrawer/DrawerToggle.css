@@ -1,5 +1,5 @@
 .toggle-button {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 24px;
@@ -7,14 +7,21 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0; */
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-left: 1rem;
   font-size: 24px;
-  color: white;
+  color: #7e2c7e;
   box-sizing: border-box;
+  z-index: 2;
 }
 
-.toggle-button:focus {
-  outline: none;
+.toggle-button:focus,
+.toggle-button:hover,
+.toggle-button:active {
+  opacity: 0.75;
 }
 
 /* .toggle-button__line {

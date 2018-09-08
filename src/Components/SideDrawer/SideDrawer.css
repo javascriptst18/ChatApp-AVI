@@ -17,6 +17,7 @@
 }
 
 .side-drawer ul {
+  margin-left: 0;
   height: 100%;
   list-style: none;
   display: flex;
@@ -25,7 +26,23 @@
 }
 
 .side-drawer li {
-  margin: 0.5 0;
+  /* margin: 0.5 0; */
+  height: 50%;
+  text-align: center;
+  border-bottom: 0.25rem solid white;
+}
+
+.side-drawer li a {
+  display: block;
+  height: 100%;
+}
+
+.side-drawer li a:nth-of-type(1) {
+  background-color: lightgrey;
+}
+
+.side-drawer li a:nth-of-type(2) {
+  background-color: darkgrey;
 }
 
 .side-drawer a {

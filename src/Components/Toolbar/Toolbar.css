@@ -1,3 +1,12 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 0.5rem 0;
+}
+
 .toolbar {
   position: fixed;
   top: 0;
