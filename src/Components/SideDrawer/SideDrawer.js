@@ -10,10 +10,10 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
       <ul>
         <li>
-          <a href="/">Notes</a>
+          <a onClick={props.toggleNotes}>Notes</a>
         </li>
         <li>
-          <a href="/">Chatt</a>
+          <a onClick={props.toggleChat}>Chatt</a>
         </li>
       </ul>
     </nav>

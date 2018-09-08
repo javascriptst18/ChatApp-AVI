@@ -9,13 +9,16 @@ import Toolbar from "./Components/Toolbar/Toolbar";
 import Toggle from "./ToggleRPC";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from "./Components/Backdrop/Backdrop";
+// import { Router, Route } from "react-router";
 import "./App.css";
-import sideDrawer from "./Components/SideDrawer/SideDrawer";
 
 class App extends Component {
   state = {
     notes: [],
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+    showChat: true,
+    showNotes: false,
+    isLoggedIn: false
   };
 
   componentWillMount() {
@@ -71,7 +74,23 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
 
-  render() {
+  toggleChat = () => {
+    this.setState({
+      showChat: true,
+      showNotes: false,
+      sideDrawerOpen: false
+    });
+  };
+
+  toggleNotes = () => {
+    this.setState({
+      showNotes: true,
+      showChat: false,
+      sideDrawerOpen: false
+    });
+  };
+
+  renderNotes = () => {
     const toDoList = this.state.notes.map(note => (
       <Note
         noteContent={note.noteContent}
@@ -80,24 +99,8 @@ class App extends Component {
         removeNote={this.removeNote}
       />
     ));
-
-    let backdrop;
-    if (this.state.sideDrawerOpen) {
-      // passing a referens to the function that takes back the sideDrawerOpen
-      backdrop = <Backdrop click={this.backdropClickHandler} />;
-    }
-    return (
-      <div className="notesWrapper">
-        <div className="notesHeader">
-          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop}
-          <main className="main-toolbar">
-            <p>This is the page content</p>
-          </main>
-          <br />
-          <div className="heading">Sticky Note</div>
-        </div>
+    if (this.state.showNotes) {
+      return (
         <div className="notesBody">
           <Toggle>
             {({ on, toggle }) => (
@@ -117,8 +120,77 @@ class App extends Component {
             )}
           </Toggle>
         </div>
-      </div>
-    );
+      );
+    }
+  };
+
+  renderChat = () => {
+    if (this.state.showChat) {
+      return <h1>CHATAPP MANNEN!</h1>;
+    }
+  };
+
+  login = () => {
+    this.setState({ isLoggedIn: true });
+  };
+
+  renderPageIfLoggedIn = () => {
+    if (this.state.isLoggedIn) {
+      let backdrop;
+      if (this.state.sideDrawerOpen) {
+        // passing a referens to the function that takes back the sideDrawerOpen
+        backdrop = <Backdrop click={this.backdropClickHandler} />;
+      }
+      return (
+        <div className="notesWrapper">
+          <div className="notesHeader">
+            <Toolbar
+              drawerClickHandler={this.drawerToggleClickHandler}
+              toggleChat={this.toggleChat}
+              toggleNotes={this.toggleNotes}
+            />
+            <SideDrawer
+              show={this.state.sideDrawerOpen}
+              toggleChat={this.toggleChat}
+              toggleNotes={this.toggleNotes}
+            />
+            {backdrop}
+            <main className="main-toolbar">
+              <p>This is the page content</p>
+            </main>
+            <br />
+            <div className="heading">Sticky Note</div>
+          </div>
+          {this.renderNotes()}
+          {this.renderChat()}
+          {/* <div className="notesBody">
+            <Toggle>
+              {({ on, toggle }) => (
+                <Fragment>
+                  <button className="toggleButton" onClick={toggle}>
+                    Show/Hide
+                  </button>
+                  {on && (
+                    <div>
+                      <div className="notesFooter">
+                        <NoteForm addNote={this.addNote} />
+                      </div>
+                      {toDoList}
+                    </div>
+                  )}
+                </Fragment>
+              )}
+            </Toggle>
+          </div> */}
+        </div>
+      );
+    } else {
+      return <button onClick={this.login}>Logga in</button>;
+    }
+  };
+
+  render() {
+    return <div>{this.renderPageIfLoggedIn()}</div>;
   }
 }
 
