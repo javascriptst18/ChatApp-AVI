@@ -93,32 +93,32 @@ class App extends Component {
   renderNotes = () => {
     const toDoList = this.state.notes.map(note => (
       <Note
-        noteContent={note.noteContent}
         noteId={note.id}
         key={note.id}
         removeNote={this.removeNote}
+        noteContent={note.noteContent}
       />
     ));
     if (this.state.showNotes) {
       return (
         <div className="notesBody">
-          <Toggle>
+          {/* <Toggle>
             {({ on, toggle }) => (
               <Fragment>
                 <button className="toggleButton" onClick={toggle}>
                   Show/Hide
                 </button>
-                {on && (
-                  <div>
-                    <div className="notesFooter">
-                      <NoteForm addNote={this.addNote} />
-                    </div>
-                    {toDoList}
-                  </div>
-                )}
+                {on && ( */}
+          <div>
+            {toDoList}
+            <div className="notesFooter">
+              <NoteForm addNote={this.addNote} />
+            </div>
+          </div>
+          {/* )}
               </Fragment>
             )}
-          </Toggle>
+          </Toggle> */}
         </div>
       );
     }
@@ -126,7 +126,7 @@ class App extends Component {
 
   renderChat = () => {
     if (this.state.showChat) {
-      return <h1>CHATAPP MANNEN!</h1>;
+      return <h1>CHATAPP ska in här!</h1>;
     }
   };
 
@@ -155,11 +155,6 @@ class App extends Component {
               toggleNotes={this.toggleNotes}
             />
             {backdrop}
-            <main className="main-toolbar">
-              <p>This is the page content</p>
-            </main>
-            <br />
-            <div className="heading">Sticky Note</div>
           </div>
           {this.renderNotes()}
           {this.renderChat()}

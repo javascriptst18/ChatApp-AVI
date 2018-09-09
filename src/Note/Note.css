@@ -38,7 +38,7 @@
 }
 
 .noteContent {
-  float: left;
+  float: center;
   padding-right: 70px;
   padding-bottom: 10px;
   display: block;
