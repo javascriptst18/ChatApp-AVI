@@ -6,10 +6,11 @@ import firebase from "firebase/app";
 import "firebase/database";
 import Toolbar from "./Components/Toolbar/Toolbar";
 // import Toggle from "./Toggle/Toggle";
-import Toggle from "./ToggleRPC";
+// import Toggle from "./ToggleRPC";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from "./Components/Backdrop/Backdrop";
 // import { Router, Route } from "react-router";
+// import Calendar from "./Components/Calendar/Calendar";
 import "./App.css";
 
 class App extends Component {
@@ -126,7 +127,7 @@ class App extends Component {
 
   renderChat = () => {
     if (this.state.showChat) {
-      return <h1>CHATAPP ska in här!</h1>;
+      return <h2>ChattApp goes here</h2>;
     }
   };
 
