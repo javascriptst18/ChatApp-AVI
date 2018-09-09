@@ -1,15 +1,12 @@
 import React, { Component, Fragment } from "react";
-import Note from "./Note/Note";
-import NoteForm from "./NoteForm/NoteForm";
-import { DB_CONFIG } from "./Config/config";
+import Note from "./Components/Note/Note";
+import NoteForm from "./Components/NoteForm/NoteForm";
+import { DB_CONFIG } from "./Components/Config/config";
 import firebase from "firebase/app";
 import "firebase/database";
 import Toolbar from "./Components/Toolbar/Toolbar";
-// import Toggle from "./Toggle/Toggle";
-// import Toggle from "./ToggleRPC";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from "./Components/Backdrop/Backdrop";
-// import { Router, Route } from "react-router";
 // import Calendar from "./Components/Calendar/Calendar";
 import "./App.css";
 
