@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Om jag tar bort key={props.key} får jag ingen varning i consolen längre
 

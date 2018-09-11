@@ -16,6 +16,7 @@ class Note extends Component {
         >
           &times;
         </span>
+        <p>{this.props.createdAt} </p>
         <p className="noteContent">{this.props.noteContent}</p>
       </div>
     );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebase, { googleProvider } from "./Components/firebase";
 import "./App.css";
 import LoginComponent from "./Components/LoginComponent";
+// import Note from "./Components/Note/Note";
 import AppNote from "./Components/AppNote";
 
 class App extends Component {
@@ -47,11 +48,13 @@ class App extends Component {
     // There is a logged in user = TRUE
     if (this.state.currentScreen === "AVIchat") {
       return (
-        <AppNote
-          btnName={this.state.btnName}
-          logOut={this.logOut}
-          user={this.state.user}
-        />
+        <div>
+          <AppNote
+            btnName={this.state.btnName}
+            logOut={this.logOut}
+            user={this.state.user}
+          />
+        </div>
       );
     }
     // There is a logged in user = FALSE
