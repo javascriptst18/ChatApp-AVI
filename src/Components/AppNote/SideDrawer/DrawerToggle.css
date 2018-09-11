@@ -1,0 +1,16 @@
+.toggle-button {
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-left: 1rem;
+  font-size: 24px;
+  color: #7e2c7e;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.toggle-button:focus,
+.toggle-button:hover,
+.toggle-button:active {
+  opacity: 0.75;
+}

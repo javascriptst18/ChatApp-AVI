@@ -1,8 +1,6 @@
 import React from "react";
 
-// Om jag tar bort key={props.key} får jag ingen varning i consolen längre
-
-function MessageComponent(props) {
+function Message(props) {
   // Only admin users can delete messages
   const none = {
     display: "none"
@@ -32,4 +30,4 @@ function MessageComponent(props) {
   );
 }
 
-export default MessageComponent;
+export default Message;

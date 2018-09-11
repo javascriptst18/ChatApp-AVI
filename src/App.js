@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import firebase, { googleProvider } from "./Components/firebase";
+import firebase, { googleProvider } from "./Components/Firebase/firebase";
 import "./App.css";
-import LoginComponent from "./Components/LoginComponent";
-// import Note from "./Components/Note/Note";
-import AppNote from "./Components/AppNote";
+import Login from "./Components/Login/Login";
+import AppNote from "./Components/AppNote/AppNote";
 
 class App extends Component {
   state = {
@@ -59,7 +58,7 @@ class App extends Component {
     }
     // There is a logged in user = FALSE
     if (this.state.currentScreen === "LoginScreen") {
-      return <LoginComponent btnName={this.state.btnName} logIn={this.logIn} />;
+      return <Login btnName={this.state.btnName} logIn={this.logIn} />;
     }
   }
 }

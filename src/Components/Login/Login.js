@@ -1,6 +1,6 @@
 import React from "react";
 
-function LoginComponent(props) {
+function Login(props) {
   return (
     <div>
       <button onClick={props.logIn}>{props.btnName}</button>
@@ -8,4 +8,4 @@ function LoginComponent(props) {
   );
 }
 
-export default LoginComponent;
+export default Login;

@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import Note from "./Note/Note";
 import NoteForm from "./NoteForm/NoteForm";
-// import { DB_CONFIG } from "./Config/config";
-// import firebase from "firebase/app";
-// import "firebase/database";
-import firebase from "./firebase";
+import firebase from "../Firebase/firebase";
 import Toolbar from "./Toolbar/Toolbar";
 import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
-import ChatAppComponent from "./ChatAppComponent";
-// import Calendar from "./Components/Calendar/Calendar";
+import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
 
 class AppNote extends Component {
@@ -18,21 +14,16 @@ class AppNote extends Component {
     sideDrawerOpen: false,
     showChat: true,
     showNotes: false
-    // isLoggedIn: false // Detta ska tas bort.
   };
 
   componentDidMount() {
     const previousNotes = this.state.notes;
 
-    // this.app = firebase.initializeApp(DB_CONFIG); Other firebase !!!!!
-    // this.database = this.app
     firebase
       .database()
       .ref()
       .child("notes");
 
-    // DataSnapshot
-    // this.database.on("child_added", snap => {
     firebase
       .database()
       .ref()
@@ -80,7 +71,7 @@ class AppNote extends Component {
   };
 
   fetchCurrentDate = () => {
-    // change the toLocaleDateString to something more fancy
+    // Det här ska ändras till något finare
     const date = new Date().toLocaleDateString();
     const time = new Date().toLocaleTimeString();
     return `${date}, ${time}`;
@@ -135,23 +126,12 @@ class AppNote extends Component {
     if (this.state.showNotes) {
       return (
         <div className="notesBody">
-          {/* <Toggle>
-            {({ on, toggle }) => (
-              <Fragment>
-                <button className="toggleButton" onClick={toggle}>
-                  Show/Hide
-                </button>
-                {on && ( */}
           <div>
             {toDoList}
             <div className="notesFooter">
               <NoteForm addNote={this.addNote} />
             </div>
           </div>
-          {/* )}
-              </Fragment>
-            )}
-          </Toggle> */}
         </div>
       );
     }
@@ -160,7 +140,7 @@ class AppNote extends Component {
   renderChat = () => {
     if (this.state.showChat) {
       return (
-        <ChatAppComponent
+        <ChatApp
           user={this.props.user}
           btnName={this.props.btnName}
           logIn={this.props.logIn}
@@ -169,11 +149,6 @@ class AppNote extends Component {
       );
     }
   };
-
-  // login = () => {
-  //   // detta ska tas bort
-  //   this.setState({ isLoggedIn: true });
-  // };
 
   renderPageIfLoggedIn = () => {
     if (this.props.user) {
@@ -200,25 +175,6 @@ class AppNote extends Component {
           </div>
           {this.renderNotes()}
           {this.renderChat()}
-          {/* <div className="notesBody">
-            <Toggle>
-              {({ on, toggle }) => (
-                <Fragment>
-                  <button className="toggleButton" onClick={toggle}>
-                    Show/Hide
-                  </button>
-                  {on && (
-                    <div>
-                      <div className="notesFooter">
-                        <NoteForm addNote={this.addNote} />
-                      </div>
-                      {toDoList}
-                    </div>
-                  )}
-                </Fragment>
-              )}
-            </Toggle>
-          </div> */}
         </div>
       );
     } else {
