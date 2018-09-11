@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Note from "./Note/Note";
 import NoteForm from "./NoteForm/NoteForm";
 // import { DB_CONFIG } from "./Config/config";
@@ -21,7 +21,7 @@ class AppNote extends Component {
     // isLoggedIn: false // Detta ska tas bort.
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const previousNotes = this.state.notes;
 
     // this.app = firebase.initializeApp(DB_CONFIG); Other firebase !!!!!
@@ -40,7 +40,8 @@ class AppNote extends Component {
       .on("child_added", snap => {
         previousNotes.push({
           id: snap.key,
-          noteContent: snap.val().noteContent
+          noteContent: snap.val().noteContent,
+          createdAt: snap.val().createdAt
         });
 
         this.setState({
@@ -66,12 +67,23 @@ class AppNote extends Component {
   }
 
   addNote = note => {
+    const currentDateAndTime = this.fetchCurrentDate();
     firebase
       .database()
       .ref()
       .child("notes")
       .push()
-      .set({ noteContent: note });
+      .set({
+        noteContent: note,
+        createdAt: currentDateAndTime
+      });
+  };
+
+  fetchCurrentDate = () => {
+    // change the toLocaleDateString to something more fancy
+    const date = new Date().toLocaleDateString();
+    const time = new Date().toLocaleTimeString();
+    return `${date}, ${time}`;
   };
 
   removeNote = noteId => {
@@ -117,6 +129,7 @@ class AppNote extends Component {
         key={note.id}
         removeNote={this.removeNote}
         noteContent={note.noteContent}
+        createdAt={note.createdAt}
       />
     ));
     if (this.state.showNotes) {

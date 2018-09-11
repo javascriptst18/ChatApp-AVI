@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import InputTextComponent from "./InputTextComponent";
 import firebase from "./firebase";
 import MessageComponent from "./MessageComponent";
+import OrderListChat from "./OrderListChat";
 
 class ChatAppComponent extends Component {
   state = {
@@ -101,7 +102,8 @@ class ChatAppComponent extends Component {
         <br />
         <InputTextComponent submitMessage={this.submitMessage} />
         <br />
-
+        <OrderListChat renderLastFive={this.renderLastFive} />
+        <br />
         <button onClick={this.props.logOut}>{this.props.btnName}</button>
       </div>
     );
