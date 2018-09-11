@@ -3,6 +3,20 @@ import firebase, { googleProvider } from "./Components/Firebase/firebase";
 import "./App.css";
 import Login from "./Components/Login/Login";
 import AppNote from "./Components/AppNote/AppNote";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+  Button
+} from "reactstrap";
 
 class App extends Component {
   state = {
