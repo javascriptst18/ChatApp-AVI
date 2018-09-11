@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class InputTextComponent extends Component {
+class InputText extends Component {
   state = {
     input: "",
     inputPlaceholder: "Write your message here and press enter"
@@ -58,4 +58,4 @@ class InputTextComponent extends Component {
   }
 }
 
-export default InputTextComponent;
+export default InputText;

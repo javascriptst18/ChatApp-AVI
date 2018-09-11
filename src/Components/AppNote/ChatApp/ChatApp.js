@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import InputTextComponent from "./InputTextComponent";
-import firebase from "./firebase";
-import MessageComponent from "./MessageComponent";
-import OrderListChat from "./OrderListChat";
+import InputText from "./InputText/InputText";
+import firebase from "../../Firebase/firebase";
+import Message from "./Message/Message";
+import OrderListChat from "./OrderListChat/OrderListChat";
 
-class ChatAppComponent extends Component {
+class ChatApp extends Component {
   state = {
     messages: []
   };
@@ -25,16 +25,6 @@ class ChatAppComponent extends Component {
         });
         this.setState({ messages: currentMessages });
       });
-    // VARFÖR OM MAN FILTRERAR SIDAN UPPDATERAS INTE !! MAN MÅSTE LADDA OM SIDAN FÖR ATT UPPDATERA ORDENTLIGT CHAT LISTAN
-    // firebase
-    //   .database()
-    //   .ref("messages")
-    //   .on("child_removed", snapshot => {
-    //     const currentMessagesAfterRemove = this.state.messages.filter(item => {
-    //       return item.key !== snapshot.key;
-    //     });
-    //     this.setState({ messages: currentMessagesAfterRemove });
-    //   });
 
     firebase
       .database()
@@ -82,7 +72,7 @@ class ChatAppComponent extends Component {
 
   currentMessage = messagesArray => {
     return messagesArray.map(message => (
-      <MessageComponent
+      <Message
         key={message.content.uniquePostId}
         textvalue={message.content.text}
         timestamp={message.content.timestamp}
@@ -100,7 +90,7 @@ class ChatAppComponent extends Component {
         <h1>Welcome {this.props.user}</h1>
         <ol>{this.currentMessage(this.state.messages)}</ol>
         <br />
-        <InputTextComponent submitMessage={this.submitMessage} />
+        <InputText submitMessage={this.submitMessage} />
         <br />
         <OrderListChat renderLastFive={this.renderLastFive} />
         <br />
@@ -110,4 +100,4 @@ class ChatAppComponent extends Component {
   }
 }
 
-export default ChatAppComponent;
+export default ChatApp;
