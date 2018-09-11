@@ -3,6 +3,7 @@ import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
+import { InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
 
 class ChatApp extends Component {
   state = {

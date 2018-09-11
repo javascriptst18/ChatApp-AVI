@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
 
 class InputText extends Component {
   state = {
@@ -32,7 +33,7 @@ class InputText extends Component {
     const { input } = this.state; // same as ==> const input = this.state.input;
     return (
       <div>
-        <input
+        {/* <input
           onFocus={this.clearInput}
           onBlur={this.setInput}
           type="text"
@@ -52,7 +53,35 @@ class InputText extends Component {
           }}
         >
           SEND
-        </button>
+        </button> */}
+
+        <InputGroup>
+          <Input
+            onFocus={this.clearInput}
+            onBlur={this.setInput}
+            type="text"
+            value={this.state.input}
+            placeholder={this.state.inputPlaceholder}
+            onChange={this.handleChange}
+          />
+
+          <InputGroupAddon addonType="append">
+            <Button
+              color="success"
+              type="submit"
+              onClick={() => {
+                if (this.state.input === "") {
+                  this.emptyWarning();
+                } else {
+                  this.props.submitMessage(input);
+                  this.setState({ input: "" });
+                }
+              }}
+            >
+              send your avi
+            </Button>
+          </InputGroupAddon>
+        </InputGroup>
       </div>
     );
   }

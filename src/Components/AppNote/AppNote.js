@@ -7,6 +7,10 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
 import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
+import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+import styled from "styled-components";
+
+import calendarImage from "./Img/calendar.png";
 
 class AppNote extends Component {
   state = {
@@ -74,7 +78,7 @@ class AppNote extends Component {
     // Det här ska ändras till något finare
     const date = new Date().toLocaleDateString();
     const time = new Date().toLocaleTimeString();
-    return `${date}, ${time}`;
+    return `${date}, ${time} `;
   };
 
   removeNote = noteId => {
@@ -125,14 +129,43 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
-        <div className="notesBody">
-          <div>
-            {toDoList}
-            <div className="notesFooter">
-              <NoteForm addNote={this.addNote} />
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="media">
+                <img
+                  class="align-self-start mr-3"
+                  src={calendarImage}
+                  alt="Generic placeholder image"
+                />
+
+                <div class="media-body">
+                  <h5 class="mt-0">AVI Calendar</h5>
+                  <p>
+                    This is our very awsome Calendar, you will like it when it's
+                    finished... :)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <Badge color="warning">{toDoList} </Badge>
+              <div className="notesFooter">
+                <NoteForm addNote={this.addNote} />
+              </div>
             </div>
           </div>
         </div>
+
+        // <div className="notesBody">
+        //   <div>
+        //     {toDoList}
+        //     <div className="notesFooter">
+        //       <NoteForm addNote={this.addNote} />
+        //     </div>
+        //   </div>
+        // </div>
       );
     }
   };

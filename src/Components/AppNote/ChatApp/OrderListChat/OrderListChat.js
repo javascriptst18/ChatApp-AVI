@@ -22,7 +22,7 @@ class OrderListChat extends Component {
       .ref()
       .child("notes")
       // .orderByChild("createdAt")
-      .limitToFirst(3)
+      .limitToFirst(5)
       .on("value", snap => {
         const updates = toArray(snap.val());
         console.log(updates);
