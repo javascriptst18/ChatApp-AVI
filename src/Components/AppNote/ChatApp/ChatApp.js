@@ -3,7 +3,8 @@ import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
-import { InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+import { InputGroup, InputGroupAddon, Button, Input , Container, Col, Row} from "reactstrap";
+
 
 class ChatApp extends Component {
   state = {
@@ -87,16 +88,26 @@ class ChatApp extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Welcome {this.props.user}</h1>
-        <ol>{this.currentMessage(this.state.messages)}</ol>
+
+      <Container className= "bg-dark">
+      <Row>
+        <Col><ol>{this.currentMessage(this.state.messages)}</ol>
         <br />
-        <InputText submitMessage={this.submitMessage} />
-        <br />
+       </Col>
+      
+        <Col><h1>Chatt {this.props.user}</h1>
         <OrderListChat renderLastFive={this.renderLastFive} />
-        <br />
+</Col>
+      </Row>
+      <Row>
+      <Col>
+      <InputText submitMessage={this.submitMessage} />
         <button onClick={this.props.logOut}>{this.props.btnName}</button>
-      </div>
+
+</Col>
+        </Row>
+      </Container>
+
     );
   }
 }

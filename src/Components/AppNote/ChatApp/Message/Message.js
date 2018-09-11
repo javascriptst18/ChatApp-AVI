@@ -7,14 +7,14 @@ function Message(props) {
     display: "none"
   };
   let messageDelete;
-  if (props.user === ("Vicente Tirado" || "Alan Habib" || "Igor Semiz")) {
+  if (props.user === ("Vicente Tirado" , "Alan Habib" , "igor Semiz")) {
     messageDelete = (
       <button
         onClick={() => {
           props.deleteMessage(props.keyDelete);
         }}
       >
-        <Badge color="danger">X</Badge>
+        <Badge className="text-danger" color = "dark">X</Badge>
       </button>
     );
   } else {
@@ -28,18 +28,17 @@ function Message(props) {
     //   <p>{props.timestamp}</p>
     //   {messageDelete}
     // </div>
-    <div class="container-fluid">
+    <div className="container-fluid"  >
       <h4>
         <Badge color="success">
-          {" "}
-          <p className="text-danger">{props.getSender + ":"}</p>
+          <p className="text-dark"></p>
           <p>{props.textvalue}</p>
         </Badge>
       </h4>
       <Badge color="Light" pill>
-        {" "}
-        <p>{props.timestamp}</p>
-      </Badge>{" "}
+        
+      </Badge>
+      <p className = "text-primary">{props.getSender + ": "}{props.timestamp}</p>
       {messageDelete}
     </div>
   );
