@@ -1,4 +1,4 @@
-.note {
+/* .note {
   padding: 10px 10px 38px 34px;
   height: auto;
   margin: auto;
@@ -11,7 +11,7 @@
   border-radius: 3px;
   box-shadow: 43x 3px 2px #333;
   opacity: 1;
-}
+} */
 
 @keyframes fadeIn {
   from {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./NoteForm.css";
 
 class NoteForm extends Component {
   state = {
@@ -26,9 +27,9 @@ class NoteForm extends Component {
 
   render() {
     return (
-      <div className="formWrapper">
+      <div className="wrapper">
         <input
-          className="noteInput"
+          className="footer"
           placeholder="Write a new note..."
           value={this.state.newNoteContent}
           onChange={this.handleUserInput}

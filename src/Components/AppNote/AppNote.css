@@ -1,13 +1,18 @@
-* {
-  box-sizing: border-box;
+html,
+body {
   margin: 0;
-  padding: 0;
-  border: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
 }
 
-.formWrapper {
-  height: 100%;
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
+.wrapper {
+  padding: 20px;
+  height: auto;
+}
+
+footer {
+  background-color: gray;
+  display: table-row;
+  height: 1px;
 }

@@ -149,9 +149,9 @@ class AppNote extends Component {
               </div>
             </div>
 
-            <div class="col">
-              <Badge color="warning">{toDoList} </Badge>
-              <div className="notesFooter">
+            <div class="wrapper">
+              {toDoList}
+              <div className="footer">
                 <NoteForm addNote={this.addNote} />
               </div>
             </div>

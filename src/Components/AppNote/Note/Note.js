@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import "./Note.css";
 
 class Note extends Component {
   handleRemoveNote = id => {
@@ -8,7 +9,7 @@ class Note extends Component {
 
   render() {
     return (
-      <div className="note fade-in">
+      <div className="note">
         <span
           className="closebtn"
           onClick={() => this.handleRemoveNote(this.props.noteId)}

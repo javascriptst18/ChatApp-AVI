@@ -3,7 +3,7 @@ import "./Toolbar.css";
 import DrawerToggle from "../SideDrawer/DrawerToggle";
 
 const toolbar = props => (
-  <div className="top-wrapper">
+  <div className="toolbar">
     <DrawerToggle click={props.drawerClickHandler} />
   </div>
 );
