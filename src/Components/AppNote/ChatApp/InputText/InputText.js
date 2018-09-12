@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
 
 class InputText extends Component {
   state = {
@@ -32,16 +31,18 @@ class InputText extends Component {
   render() {
     const { input } = this.state; // same as ==> const input = this.state.input;
     return (
-      <div>
-        {/* <input
+      <div className="formWrapper">
+        <input
+          className="noteInput"
           onFocus={this.clearInput}
           onBlur={this.setInput}
-          type="text"
+          type="textarea"
           value={this.state.input}
           placeholder={this.state.inputPlaceholder}
           onChange={this.handleChange}
         />
         <button
+          className="noteButton"
           type="submit"
           onClick={() => {
             if (this.state.input === "") {
@@ -53,35 +54,33 @@ class InputText extends Component {
           }}
         >
           SEND
-        </button> */}
+        </button>
 
-        <InputGroup>
-          <Input
-            onFocus={this.clearInput}
-            onBlur={this.setInput}
-            type="text"
-            value={this.state.input}
-            placeholder={this.state.inputPlaceholder}
-            onChange={this.handleChange}
-          />
+        {/* <Input
+          className="noteInput"
+          onFocus={this.clearInput}
+          onBlur={this.setInput}
+          type="textarea"
+          value={this.state.input}
+          placeholder={this.state.inputPlaceholder}
+          onChange={this.handleChange}
+        />
 
-          <InputGroupAddon addonType="append">
-            <Button
-              color="success"
-              type="submit"
-              onClick={() => {
-                if (this.state.input === "") {
-                  this.emptyWarning();
-                } else {
-                  this.props.submitMessage(input);
-                  this.setState({ input: "" });
-                }
-              }}
-            >
-              send your avi
-            </Button>
-          </InputGroupAddon>
-        </InputGroup>
+        <Button
+          className="noteButton"
+          color="success"
+          type="submit"
+          onClick={() => {
+            if (this.state.input === "") {
+              this.emptyWarning();
+            } else {
+              this.props.submitMessage(input);
+              this.setState({ input: "" });
+            }
+          }}
+        >
+          send your avi
+        </Button> */}
       </div>
     );
   }

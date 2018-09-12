@@ -27,12 +27,13 @@ class NoteForm extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="formWrapper">
         <input
-          className="footer"
+          className="noteInput"
           placeholder="Write a new note..."
           value={this.state.newNoteContent}
           onChange={this.handleUserInput}
+          type="textarea"
         />
         <button className="noteButton" onClick={this.writeNote}>
           Add Note

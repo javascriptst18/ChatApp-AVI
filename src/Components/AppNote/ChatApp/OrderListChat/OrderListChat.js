@@ -33,9 +33,11 @@ class OrderListChat extends Component {
     const { notes } = this.state;
     const renderLastFive = notes.map((note, i) => {
       return (
-        <div key={i}>
-          {note.createdAt}
-          {note.noteContent}
+        <div className="formWrapper">
+          <div className="noteContent" key={i}>
+            {note.createdAt}
+            {note.noteContent}
+          </div>
         </div>
       );
     });

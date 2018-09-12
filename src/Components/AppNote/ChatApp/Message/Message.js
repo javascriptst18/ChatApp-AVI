@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+// import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
 
 function Message(props) {
   // Only admin users can delete messages
@@ -13,33 +13,17 @@ function Message(props) {
         onClick={() => {
           props.deleteMessage(props.keyDelete);
         }}
-      >
-        <Badge color="danger">X</Badge>
-      </button>
+      />
     );
   } else {
-    messageDelete = <button style={none}>Nothing</button>;
+    messageDelete = <button>Nothing</button>;
   }
 
   return (
-    // <div>
-    //   <p>{props.getSender}</p>
-    //   <p>{props.textvalue}</p>
-    //   <p>{props.timestamp}</p>
-    //   {messageDelete}
-    // </div>
-    <div class="container-fluid">
-      <h4>
-        <Badge color="success">
-          {" "}
-          <p className="text-danger">{props.getSender + ":"}</p>
-          <p>{props.textvalue}</p>
-        </Badge>
-      </h4>
-      <Badge color="Light" pill>
-        {" "}
-        <p>{props.timestamp}</p>
-      </Badge>{" "}
+    <div className="note">
+      <p>{props.getSender + ":"}</p>
+      <p className="noteContent">{props.textvalue}</p>
+      <p>{props.timestamp}</p>
       {messageDelete}
     </div>
   );

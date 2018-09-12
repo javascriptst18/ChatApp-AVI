@@ -7,8 +7,8 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
 import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
-import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
-import styled from "styled-components";
+// import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+// import styled from "styled-components";
 
 import calendarImage from "./Img/calendar.png";
 
@@ -129,34 +129,32 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="media">
-                <img
-                  class="align-self-start mr-3"
-                  src={calendarImage}
-                  alt="Generic placeholder image"
-                />
+        // <div class="container">
+        //   <div class="row">
+        //     <div class="col">
+        //       <div class="media">
+        //         <img
+        //           class="align-self-start mr-3"
+        //           src={calendarImage}
+        //           alt="Generic placeholder image"
+        //         />
 
-                <div class="media-body">
-                  <h5 class="mt-0">AVI Calendar</h5>
-                  <p>
-                    This is our very awsome Calendar, you will like it when it's
-                    finished... :)
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="wrapper">
-              {toDoList}
-              <div className="footer">
-                <NoteForm addNote={this.addNote} />
-              </div>
-            </div>
+        //         <div class="media-body">
+        //         <h5 class="mt-0">AVI Calendar</h5>
+        //           {/* <p>
+        //             This is our very awsome Calendar, you will like it when it's
+        //             finished... :)
+        //           </p> */}
+        //         </div>
+        //       </div>
+        //     </div>
+        <div className="notesWrapper">
+          <div className="notesBody">{toDoList}</div>
+          <div className="notesFooter">
+            <NoteForm addNote={this.addNote} />
           </div>
         </div>
+        // </div>
 
         // <div className="notesBody">
         //   <div>
@@ -173,12 +171,9 @@ class AppNote extends Component {
   renderChat = () => {
     if (this.state.showChat) {
       return (
-        <ChatApp
-          user={this.props.user}
-          btnName={this.props.btnName}
-          logIn={this.props.logIn}
-          logOut={this.props.logOut}
-        />
+        <div className="formWrapper">
+          <ChatApp user={this.props.user} logIn={this.props.logIn} />
+        </div>
       );
     }
   };
@@ -198,14 +193,17 @@ class AppNote extends Component {
               drawerClickHandler={this.drawerToggleClickHandler}
               toggleChat={this.toggleChat}
               toggleNotes={this.toggleNotes}
+              onClick={this.props.logOut}
+              btnName={this.props.btnName}
             />
-            <SideDrawer
-              show={this.state.sideDrawerOpen}
-              toggleChat={this.toggleChat}
-              toggleNotes={this.toggleNotes}
-            />
-            {backdrop}
           </div>
+
+          <SideDrawer
+            show={this.state.sideDrawerOpen}
+            toggleChat={this.toggleChat}
+            toggleNotes={this.toggleNotes}
+          />
+          {backdrop}
           {this.renderNotes()}
           {this.renderChat()}
         </div>
