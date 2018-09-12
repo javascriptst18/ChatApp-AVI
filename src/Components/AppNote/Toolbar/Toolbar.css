@@ -1,71 +1,38 @@
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  padding: 0.5rem 0;
+/* .clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
 
-.toolbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #7e2c7e;
-  height: 56px;
+/* * html .clearfix {
+  height: 1%;
 }
+.clearfix {
+  display: block;
+}
+close commented backslash hack */
 
-.toolbar_navigation-items ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.toolbar_navigation {
-  display: flex;
-  height: 100%;
-  align-items: center;
-}
-
-.toolbar_logo {
-  margin: 1rem;
-}
-.toolbar_logo a {
-  color: white;
-  text-decoration: none;
-  font-size: 2.5rem;
-}
-
-.spacer {
-  flex: 1;
-}
-
-.toolbar_navigation-items li {
-  padding: 0 0.5rem;
-}
-.toolbar_navigation-items a {
+/* .header {
+  background: #596bcc;
   color: #fff;
-  text-decoration: none;
-}
+  padding: 10px 5%;
+  box-shadow: 0 1px 3px #999;
+  float: left;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+} */
 
-.toolbar_navigation-items a:hover,
-.toolbar_navigation-items a:active {
-  color: #fa923f;
-}
-
-/* @media (max-width: 768px) {
-  .toolbar_navigation-items {
-    display: none;
-  }
-}
-
-@media (min-widht: 769px) {
-  .toolbar_banan_button {
-    display: none;
-  }
-  .toolbar_logo {
-    margin-left: 0;
-  }
+/* .header h1 {
+  margin: 0;
+  font-size: 20px;
+  float: left;
 } */

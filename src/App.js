@@ -3,20 +3,6 @@ import firebase, { googleProvider } from "./Components/Firebase/firebase";
 import "./App.css";
 import Login from "./Components/Login/Login";
 import AppNote from "./Components/AppNote/AppNote";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Button
-} from "reactstrap";
 
 class App extends Component {
   state = {
@@ -61,7 +47,7 @@ class App extends Component {
     // There is a logged in user = TRUE
     if (this.state.currentScreen === "AVIchat") {
       return (
-        <div>
+        <div style={{ height: "100%" }}>
           <AppNote
             btnName={this.state.btnName}
             logOut={this.logOut}
