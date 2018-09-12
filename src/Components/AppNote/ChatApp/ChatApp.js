@@ -3,7 +3,7 @@ import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
-import { InputGroup, InputGroupAddon, Button, Input , Container, Col, Row} from "reactstrap";
+import { InputGroup, InputGroupAddon, Button, Input , Container, Col, Row, Badge} from "reactstrap";
 
 
 class ChatApp extends Component {
@@ -95,8 +95,11 @@ class ChatApp extends Component {
         <br />
        </Col>
       
-        <Col><h1>Chatt {this.props.user}</h1>
+        <Col>
+        <Badge color= "success">
+        <h1 className = "text-warning">Chatt {this.props.user}</h1>
         <OrderListChat renderLastFive={this.renderLastFive} />
+        </Badge>
 </Col>
       </Row>
       <Row>

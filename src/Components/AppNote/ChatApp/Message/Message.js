@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+import { Badge, InputGroup, InputGroupAddon, Button, Input, Card, CardTitle, CardText, Col } from "reactstrap";
 
 function Message(props) {
   // Only admin users can delete messages
@@ -9,13 +9,13 @@ function Message(props) {
   let messageDelete;
   if (props.user === ("Vicente Tirado" , "Alan Habib" , "igor Semiz")) {
     messageDelete = (
-      <button
+      <span
         onClick={() => {
           props.deleteMessage(props.keyDelete);
         }}
       >
         <Badge className="text-danger" color = "dark">X</Badge>
-      </button>
+      </span>
     );
   } else {
     messageDelete = <button style={none}>Nothing</button>;
@@ -29,17 +29,28 @@ function Message(props) {
     //   {messageDelete}
     // </div>
     <div className="container-fluid"  >
-      <h4>
-        <Badge color="success">
+    {messageDelete}
+      {/* <h4> */}
+        {/* <Badge color="success">
           <p className="text-dark"></p>
           <p>{props.textvalue}</p>
         </Badge>
       </h4>
       <Badge color="Light" pill>
         
-      </Badge>
-      <p className = "text-primary">{props.getSender + ": "}{props.timestamp}</p>
-      {messageDelete}
+      </Badge> */}
+
+<Col sm="6">
+      <Card className= "SuccessS">
+          <CardTitle>Special Title Treatment</CardTitle>
+          <CardText> <p className="text-dark"></p>
+          <p>{props.textvalue}</p></CardText>
+          
+        </Card>
+</Col>
+
+      <p className = "text-warning">{props.getSender + ": "}{props.timestamp}</p>
+      
     </div>
   );
 }

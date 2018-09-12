@@ -7,7 +7,7 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
 import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
-import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+import { Badge, InputGroup, InputGroupAddon, Button, Input, Container } from "reactstrap";
 import styled from "styled-components";
 
 import calendarImage from "./Img/calendar.png";
@@ -129,34 +129,42 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
+        <Container className= "bg-dark">
         <div class="container">
           <div class="row">
             <div class="col">
+            <Container  className="bg-primary">
               <div class="media">
                 <img
                   class="align-self-start mr-3"
                   src={calendarImage}
                   alt="Generic placeholder image"
                 />
-
+                
+                <p>
                 <div class="media-body">
                   <h5 class="mt-0">AVI Calendar</h5>
-                  <p>
+                  
                     This is our very awsome Calendar, you will like it when it's
                     finished... :)
+                    </div>
                   </p>
-                </div>
+            
               </div>
+              </Container>
             </div>
 
             <div class="col">
-              <Badge color="warning">{toDoList} </Badge>
-              <div className="notesFooter">
+              {toDoList}
+              
+              <Badge color="success">
                 <NoteForm addNote={this.addNote} />
-              </div>
+                </Badge>
+              
             </div>
           </div>
         </div>
+        </Container>
 
         // <div className="notesBody">
         //   <div>
@@ -192,8 +200,8 @@ class AppNote extends Component {
         backdrop = <Backdrop click={this.backdropClickHandler} />;
       }
       return (
-        <div className="notesWrapper">
-          <div className="notesHeader">
+        <Container className= "bg-dark">
+          
             <Toolbar
               drawerClickHandler={this.drawerToggleClickHandler}
               toggleChat={this.toggleChat}
@@ -205,10 +213,13 @@ class AppNote extends Component {
               toggleNotes={this.toggleNotes}
             />
             {backdrop}
-          </div>
+          
+          
           {this.renderNotes()}
           {this.renderChat()}
-        </div>
+          </Container>
+      
+      
       );
     } else {
       return <button onClick={this.login}>Logga in</button>;
