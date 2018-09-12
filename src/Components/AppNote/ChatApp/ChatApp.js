@@ -1,18 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
-import {
-  InputGroup,
-  InputGroupAddon,
-  Button,
-  Input,
-  Container,
-  Col,
-  Row,
-  Badge
-} from "reactstrap";
+// import {
+//   InputGroup,
+//   InputGroupAddon,
+//   Button,
+//   Input,
+//   Container,
+//   Col,
+//   Row,
+//   Badge
+// } from "reactstrap";
 
 class ChatApp extends Component {
   state = {
@@ -96,27 +96,19 @@ class ChatApp extends Component {
 
   render() {
     return (
-      <Container className="bg-dark">
-        <Row>
-          <Col>
-            <ol>{this.currentMessage(this.state.messages)}</ol>
-            <br />
-          </Col>
-
-          <Col>
-            <Badge color="success">
-              <h1 className="text-warning">Chatt {this.props.user}</h1>
-              <OrderListChat renderLastFive={this.renderLastFive} />
-            </Badge>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <InputText submitMessage={this.submitMessage} />
-            <button onClick={this.props.logOut}>{this.props.btnName}</button>
-          </Col>
-        </Row>
-      </Container>
+      <Fragment>
+        <div className="mainChatAppWrapper">
+          <ol>{this.currentMessage(this.state.messages)}</ol>
+          {/* lägg diven här */}
+          <br />
+          <h1 className="text-warning">Chatt {this.props.user}</h1>
+          <OrderListChat renderLastFive={this.renderLastFive} />
+        </div>
+        <div className="chatFooter">
+          <InputText submitMessage={this.submitMessage} />
+          <button onClick={this.props.logOut}>{this.props.btnName}</button>
+        </div>
+      </Fragment>
     );
   }
 }

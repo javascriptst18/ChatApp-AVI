@@ -4,18 +4,19 @@
 
 html,
 body {
+  display: flex;
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #cac5c5;
 }
 
-/* body {
+body {
   width: 100%;
   min-height: 100%;
   background-attachment: fixed;
   background-size: cover;
-} */
+}
 /* 
 * {
   height: 100%;

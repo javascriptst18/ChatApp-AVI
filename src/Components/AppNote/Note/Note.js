@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import "./Note.css";
 import PropTypes from "prop-types";
-import {
-  Badge,
-  InputGroup,
-  InputGroupAddon,
-  Button,
-  Input,
-  Card,
-  CardTitle,
-  CardText
-} from "reactstrap";
+// import {
+//   Badge,
+//   InputGroup,
+//   InputGroupAddon,
+//   Button,
+//   Input,
+//   Card,
+//   CardTitle,
+//   CardText
+// } from "reactstrap";
 
 class Note extends Component {
   handleRemoveNote = id => {
@@ -45,10 +45,7 @@ class Note extends Component {
           </Badge>
         </span> */}
         {/* <Badge color="success"> */}
-        <Card body>
-          <CardTitle>Special Title Treatment</CardTitle>
-          <CardText color="success">{this.props.noteContent} </CardText>
-        </Card>
+        {this.props.noteContent}
         <p>{this.props.createdAt} </p>
         {/* </Badge> */}
       </div>
