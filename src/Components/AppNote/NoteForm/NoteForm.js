@@ -32,9 +32,9 @@ class NoteForm extends Component {
 
   render() {
     return (
-      <div className="formWrapper">
+      <div>
         <input
-          className="noteInput"
+          // className="noteInput"
           placeholder="Write a new note..."
           value={this.state.newNoteContent}
           onChange={this.handleUserInput}

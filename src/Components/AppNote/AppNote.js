@@ -7,14 +7,16 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
 import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
-import {
-  Badge,
-  InputGroup,
-  InputGroupAddon,
-  Button,
-  Input,
-  Container
-} from "reactstrap";
+// import {
+//   Badge,
+//   InputGroup,
+//   InputGroupAddon,
+//   Button,
+//   Input,
+//   Container,
+//   Col,
+//   Row
+// } from "reactstrap";
 
 import styled from "styled-components";
 import calendarImage from "./Img/calendar.png";
@@ -137,39 +139,12 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
-        <Container className="bg-dark">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <Container className="bg-primary">
-                  <div class="media">
-                    <img
-                      class="align-self-start mr-3"
-                      src={calendarImage}
-                      alt="Generic placeholder image"
-                    />
+        <div class="media-body">
+          <h2 class="mt-0">Notes</h2>
 
-                    <p>
-                      <div class="media-body">
-                        <h5 class="mt-0">AVI Calendar</h5>
-                        This is our very awsome Calendar, you will like it when
-                        it's finished... :)
-                      </div>
-                    </p>
-                  </div>
-                </Container>
-              </div>
-
-              <div class="col">
-                {toDoList}
-
-                <Badge color="success">
-                  <NoteForm addNote={this.addNote} />
-                </Badge>
-              </div>
-            </div>
-          </div>
-        </Container>
+          {toDoList}
+          <NoteForm addNote={this.addNote} />
+        </div>
 
         // <div className="notesBody">
         //   <div>
@@ -186,7 +161,7 @@ class AppNote extends Component {
   renderChat = () => {
     if (this.state.showChat) {
       return (
-        <div className="formWrapper">
+        <div className="chatAppWrapper">
           <ChatApp user={this.props.user} logIn={this.props.logIn} />
         </div>
       );
@@ -202,7 +177,7 @@ class AppNote extends Component {
         backdrop = <Backdrop click={this.backdropClickHandler} />;
       }
       return (
-        <Container className="bg-dark">
+        <div className="mainWrapper">
           <Toolbar
             drawerClickHandler={this.drawerToggleClickHandler}
             toggleChat={this.toggleChat}
@@ -219,7 +194,7 @@ class AppNote extends Component {
 
           {this.renderNotes()}
           {this.renderChat()}
-        </Container>
+        </div>
       );
     } else {
       return <button onClick={this.login}>Logga in</button>;

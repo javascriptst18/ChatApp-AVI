@@ -1,6 +1,6 @@
-/* .notesWrapper {
+.notesWrapper {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   height: 100%;
   max-width: 758px;
 }
@@ -14,21 +14,26 @@
   background: #596bcc;
   color: #fff;
   padding: 10px 5%;
-  box-shadow: 0 1px 3px #999;
-  float: left;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .spacer {
   flex: 1;
 }
 
-logout {
+.toggle-button {
+  float: left;
+}
+
+.notesLogout {
   float: right;
 }
 
 .notesBody {
   padding-top: 24px;
   display: flex;
+  flex-flow: column;
   flex: 1 1 85%;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -36,8 +41,34 @@ logout {
   overflow: auto;
 }
 
+.mainWrapper {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+.chatAppWrapper {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  /* display: flex;
+  flex: 1;
+  flex-flow: column; */
+  /* padding-bottom: 60px; */
+  /* margin-top: 35px;
+  margin-bottom: 60px; */
+  height: calc(100% - 112px);
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.mainChatAppWrapper {
+  flex: 1;
+}
+
 .notesFooter {
   display: flex;
+  flex-flow: column;
   flex: 1 1 5%;
   position: fixed;
   left: 0;
@@ -47,6 +78,20 @@ logout {
   color: white;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.chatFooter {
+  flex: 1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: white;
 }
 
 .note {
@@ -93,8 +138,9 @@ logout {
   width: 100%;
   max-width: 750px;
   display: flex;
+  flex-flow: column;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 
 .closebtn {
@@ -109,12 +155,12 @@ logout {
   color: #ac2500;
 }
 
-.formWrapper {
+/* .formWrapper {
   width: 100%;
   margin: 0 auto;
-}
+} */
 
-.noteButton {
+/* .noteButton {
   width: 30%;
   max-width: 750px;
   font-size: 1.3em;
@@ -125,7 +171,18 @@ logout {
   background-color: rgba(34, 49, 63, 0.8);
   color: #fff;
   transition: 0.2s ease-out;
+} */
 
+.noteButton {
+  width: 50px;
+  height: 50px;
+  line-height: 25px;
+  font-size: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  background-color: pink;
 }
 
 .noteButton:hover {
@@ -151,4 +208,26 @@ logout {
   background-color: #e4f1fe;
   color: rgb(126, 119, 119);
   transition: 0.2s ease-in;
-} */
+}
+
+.speech-bubble {
+  position: relative;
+  background: #89abcc;
+  border-radius: 0.4em;
+  margin: 10px 10px;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 19px solid transparent;
+  border-right-color: #94b6d8;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -9.5px;
+  margin-left: -19px;
+}

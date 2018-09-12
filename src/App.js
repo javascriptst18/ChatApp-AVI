@@ -47,13 +47,11 @@ class App extends Component {
     // There is a logged in user = TRUE
     if (this.state.currentScreen === "AVIchat") {
       return (
-        <div style={{ height: "100%" }}>
-          <AppNote
-            btnName={this.state.btnName}
-            logOut={this.logOut}
-            user={this.state.user}
-          />
-        </div>
+        <AppNote
+          btnName={this.state.btnName}
+          logOut={this.logOut}
+          user={this.state.user}
+        />
       );
     }
     // There is a logged in user = FALSE
