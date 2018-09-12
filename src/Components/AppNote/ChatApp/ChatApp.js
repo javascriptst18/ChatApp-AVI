@@ -3,16 +3,6 @@ import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
-// import {
-//   InputGroup,
-//   InputGroupAddon,
-//   Button,
-//   Input,
-//   Container,
-//   Col,
-//   Row,
-//   Badge
-// } from "reactstrap";
 
 class ChatApp extends Component {
   state = {
@@ -49,7 +39,19 @@ class ChatApp extends Component {
 
         this.setState({ messages: currentMessages });
       });
+
+    this.scrollToBottom();
   }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom = () => {
+    if (this.state.messages.length) {
+      this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // Timestamp function that will be called everytime we submit a new message
   getCurrentDate = () => {
@@ -97,12 +99,20 @@ class ChatApp extends Component {
   render() {
     return (
       <Fragment>
+        <h4 className="text-warning">{this.props.user}</h4>
+        <OrderListChat renderLastFive={this.renderLastFive} />
+        <br />
         <div className="mainChatAppWrapper">
           <ol>{this.currentMessage(this.state.messages)}</ol>
-          {/* lägg diven här */}
-          <br />
-          <h1 className="text-warning">Chatt {this.props.user}</h1>
-          <OrderListChat renderLastFive={this.renderLastFive} />
+          <div
+            style={{ float: "left", clear: "both" }}
+            ref={el => {
+              this.messagesEnd = el;
+            }}
+          />
+          {/* lägg diven här diven ska innehålla ett card tillsammans med meddelanden
+          cardet ska ha position relative och bilden som läggs in i cardet ska ha position absolute
+          bilden ska ha 50px top-25 left -25  */}
         </div>
         <div className="chatFooter">
           <InputText submitMessage={this.submitMessage} />

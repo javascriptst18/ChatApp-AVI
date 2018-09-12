@@ -1,16 +1,6 @@
 import React, { Component } from "react";
 import "./Note.css";
 import PropTypes from "prop-types";
-// import {
-//   Badge,
-//   InputGroup,
-//   InputGroupAddon,
-//   Button,
-//   Input,
-//   Card,
-//   CardTitle,
-//   CardText
-// } from "reactstrap";
 
 class Note extends Component {
   handleRemoveNote = id => {

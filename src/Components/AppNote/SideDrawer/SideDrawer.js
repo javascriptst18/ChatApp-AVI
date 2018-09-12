@@ -10,10 +10,18 @@ const sideDrawer = props => {
     <nav className={drawerClasses}>
       <ul>
         <li>
-          <a onClick={props.toggleNotes}>Notes</a>
+          <a onClick={props.toggleNotes}>
+            Notes
+            <br />
+            <i className="far fa-sticky-note" />
+          </a>
         </li>
         <li>
-          <a onClick={props.toggleChat}>Chatt</a>
+          <a onClick={props.toggleChat}>
+            Chat
+            <br />
+            <i className="far fa-comments" />
+          </a>
         </li>
       </ul>
     </nav>
