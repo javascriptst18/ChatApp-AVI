@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class InputText extends Component {
   state = {
     input: "",
-    inputPlaceholder: "Write your message here and press enter"
+    inputPlaceholder: "Chat here..."
   };
 
   // Updates input state with text from input
@@ -19,7 +19,7 @@ class InputText extends Component {
   // Sets input text (placeholder) when not focus (blur)
   setInput = () => {
     this.setState({
-      inputPlaceholder: "Write your message here and press enter"
+      inputPlaceholder: "Chat here..."
     });
   };
 
@@ -53,7 +53,10 @@ class InputText extends Component {
             }
           }}
         >
-          SEND
+          <i
+            className="far fa-arrow-alt-circle-up"
+            style={{ height: "100%", width: "100%" }}
+          />
         </button>
 
         {/* <Input

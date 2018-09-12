@@ -7,19 +7,6 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
 import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
-// import {
-//   Badge,
-//   InputGroup,
-//   InputGroupAddon,
-//   Button,
-//   Input,
-//   Container,
-//   Col,
-//   Row
-// } from "reactstrap";
-
-import styled from "styled-components";
-import calendarImage from "./Img/calendar.png";
 
 class AppNote extends Component {
   state = {
@@ -145,15 +132,6 @@ class AppNote extends Component {
           {toDoList}
           <NoteForm addNote={this.addNote} />
         </div>
-
-        // <div className="notesBody">
-        //   <div>
-        //     {toDoList}
-        //     <div className="notesFooter">
-        //       <NoteForm addNote={this.addNote} />
-        //     </div>
-        //   </div>
-        // </div>
       );
     }
   };
