@@ -132,6 +132,7 @@ class AppNote extends Component {
         removeNote={this.removeNote}
         noteContent={note.noteContent}
         createdAt={note.createdAt}
+        user={this.props.user}
       />
     ));
     if (this.state.showNotes) {

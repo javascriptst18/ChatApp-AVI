@@ -1,7 +1,16 @@
 import React, { Component } from "react";
 import "./Note.css";
 import PropTypes from "prop-types";
-import { Badge, InputGroup, InputGroupAddon, Button, Input, Card, CardTitle, CardText } from "reactstrap";
+import {
+  Badge,
+  InputGroup,
+  InputGroupAddon,
+  Button,
+  Input,
+  Card,
+  CardTitle,
+  CardText
+} from "reactstrap";
 
 class Note extends Component {
   handleRemoveNote = id => {
@@ -9,23 +18,38 @@ class Note extends Component {
   };
 
   render() {
-    return (
+    const none = {
+      display: "none"
+    };
+    let messageDelete;
+    if (this.props.user === ("Vicente Tirado", "Alan. ATB")) {
+      messageDelete = (
+        <button onClick={() => this.handleRemoveNote(this.props.noteId)}>
+          Delete
+        </button>
+      );
+    } else {
+      messageDelete = <button style={none}>Nothing</button>;
+    }
 
+    return (
       <div className="note fade-in">
-        <span
+        {messageDelete}
+        {/* <span
           className="closebtn"
           onClick={() => this.handleRemoveNote(this.props.noteId)}
         >
-         <Badge className="text-danger" color = "dark"> &times;</Badge>
-        </span>
+          <Badge className="text-danger" color="dark">
+            {" "}
+            &times;
+          </Badge>
+        </span> */}
         {/* <Badge color="success"> */}
         <Card body>
           <CardTitle>Special Title Treatment</CardTitle>
-          <CardText color = "success" >{this.props.noteContent} </CardText>
-          
+          <CardText color="success">{this.props.noteContent} </CardText>
         </Card>
         <p>{this.props.createdAt} </p>
-        
         {/* </Badge> */}
       </div>
     );

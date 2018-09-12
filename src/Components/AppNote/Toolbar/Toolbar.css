@@ -19,7 +19,7 @@
 }
 close commented backslash hack */
 
-.header {
+/* .header {
   background: #596bcc;
   color: #fff;
   padding: 10px 5%;
@@ -29,7 +29,7 @@ close commented backslash hack */
   width: 100%;
   position: fixed;
   top: 0;
-}
+} */
 
 /* .header h1 {
   margin: 0;

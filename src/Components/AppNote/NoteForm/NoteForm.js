@@ -25,6 +25,11 @@ class NoteForm extends Component {
     });
   };
 
+  // This function gets called everytime SEND is clicked and the input text is empty
+  emptyWarning = () => {
+    alert("Empty input, please write something!");
+  };
+
   render() {
     return (
       <div className="formWrapper">
@@ -35,7 +40,16 @@ class NoteForm extends Component {
           onChange={this.handleUserInput}
           type="textarea"
         />
-        <button className="noteButton" onClick={this.writeNote}>
+        <button
+          className="noteButton"
+          onClick={() => {
+            if (this.state.newNoteContent === "") {
+              this.emptyWarning();
+            } else {
+              this.writeNote();
+            }
+          }}
+        >
           Add Note
         </button>
       </div>

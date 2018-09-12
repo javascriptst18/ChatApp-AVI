@@ -17,7 +17,7 @@ function Message(props) {
     display: "none"
   };
   let messageDelete;
-  if (props.user === ("Vicente Tirado", "Alan Habib", "igor Semiz")) {
+  if (props.user === ("Vicente Tirado", "Alan. ATB")) {
     messageDelete = (
       <span
         onClick={() => {
@@ -30,7 +30,7 @@ function Message(props) {
       </span>
     );
   } else {
-    messageDelete = <button>Nothing</button>;
+    messageDelete = <button style={none}>Nothing</button>;
   }
 
   return (
