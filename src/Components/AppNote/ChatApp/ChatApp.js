@@ -3,7 +3,16 @@ import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
-// import { InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
+import {
+  InputGroup,
+  InputGroupAddon,
+  Button,
+  Input,
+  Container,
+  Col,
+  Row,
+  Badge
+} from "reactstrap";
 
 class ChatApp extends Component {
   state = {
@@ -87,18 +96,27 @@ class ChatApp extends Component {
 
   render() {
     return (
-      <div className="notesWrapper">
-        <div className="notesBody">
-          <h1>Welcome {this.props.user}</h1>
+      <Container className="bg-dark">
+        <Row>
+          <Col>
+            <ol>{this.currentMessage(this.state.messages)}</ol>
+            <br />
+          </Col>
 
-          <ol>{this.currentMessage(this.state.messages)}</ol>
-        </div>
-        <div className="notesFooter">
-          <InputText className="noteInput" submitMessage={this.submitMessage} />
-        </div>
-        <OrderListChat renderLastFive={this.renderLastFive} />
-        <div className="notesHeader" />
-      </div>
+          <Col>
+            <Badge color="success">
+              <h1 className="text-warning">Chatt {this.props.user}</h1>
+              <OrderListChat renderLastFive={this.renderLastFive} />
+            </Badge>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <InputText submitMessage={this.submitMessage} />
+            <button onClick={this.props.logOut}>{this.props.btnName}</button>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

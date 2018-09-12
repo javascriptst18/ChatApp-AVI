@@ -7,9 +7,16 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import Backdrop from "./Backdrop/Backdrop";
 import ChatApp from "./ChatApp/ChatApp";
 import "./AppNote.css";
-// import { Badge, InputGroup, InputGroupAddon, Button, Input } from "reactstrap";
-// import styled from "styled-components";
+import {
+  Badge,
+  InputGroup,
+  InputGroupAddon,
+  Button,
+  Input,
+  Container
+} from "reactstrap";
 
+import styled from "styled-components";
 import calendarImage from "./Img/calendar.png";
 
 class AppNote extends Component {
@@ -129,32 +136,39 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
-        // <div class="container">
-        //   <div class="row">
-        //     <div class="col">
-        //       <div class="media">
-        //         <img
-        //           class="align-self-start mr-3"
-        //           src={calendarImage}
-        //           alt="Generic placeholder image"
-        //         />
+        <Container className="bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <Container className="bg-primary">
+                  <div class="media">
+                    <img
+                      class="align-self-start mr-3"
+                      src={calendarImage}
+                      alt="Generic placeholder image"
+                    />
 
-        //         <div class="media-body">
-        //         <h5 class="mt-0">AVI Calendar</h5>
-        //           {/* <p>
-        //             This is our very awsome Calendar, you will like it when it's
-        //             finished... :)
-        //           </p> */}
-        //         </div>
-        //       </div>
-        //     </div>
-        <div className="notesWrapper">
-          <div className="notesBody">{toDoList}</div>
-          <div className="notesFooter">
-            <NoteForm addNote={this.addNote} />
+                    <p>
+                      <div class="media-body">
+                        <h5 class="mt-0">AVI Calendar</h5>
+                        This is our very awsome Calendar, you will like it when
+                        it's finished... :)
+                      </div>
+                    </p>
+                  </div>
+                </Container>
+              </div>
+
+              <div class="col">
+                {toDoList}
+
+                <Badge color="success">
+                  <NoteForm addNote={this.addNote} />
+                </Badge>
+              </div>
+            </div>
           </div>
-        </div>
-        // </div>
+        </Container>
 
         // <div className="notesBody">
         //   <div>
@@ -187,26 +201,24 @@ class AppNote extends Component {
         backdrop = <Backdrop click={this.backdropClickHandler} />;
       }
       return (
-        <div className="notesWrapper">
-          <div className="notesHeader">
-            <Toolbar
-              drawerClickHandler={this.drawerToggleClickHandler}
-              toggleChat={this.toggleChat}
-              toggleNotes={this.toggleNotes}
-              onClick={this.props.logOut}
-              btnName={this.props.btnName}
-            />
-          </div>
-
+        <Container className="bg-dark">
+          <Toolbar
+            drawerClickHandler={this.drawerToggleClickHandler}
+            toggleChat={this.toggleChat}
+            toggleNotes={this.toggleNotes}
+            onClick={this.props.logOut}
+            btnName={this.props.btnName}
+          />
           <SideDrawer
             show={this.state.sideDrawerOpen}
             toggleChat={this.toggleChat}
             toggleNotes={this.toggleNotes}
           />
           {backdrop}
+
           {this.renderNotes()}
           {this.renderChat()}
-        </div>
+        </Container>
       );
     } else {
       return <button onClick={this.login}>Logga in</button>;
