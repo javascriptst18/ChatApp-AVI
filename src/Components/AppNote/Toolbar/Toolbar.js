@@ -6,9 +6,8 @@ const toolbar = props => (
   <DrawerToggle
     click={props.drawerClickHandler}
     btnName={props.btnName}
-    onClick={props.logOut}
+    onClick={props.onClick}
   />
-
 );
 
 export default toolbar;
