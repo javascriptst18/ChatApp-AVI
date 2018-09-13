@@ -127,7 +127,7 @@ body {
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 80px;
+  height: 60px;
   width: 100%;
   background-color: red;
   color: white;
@@ -265,6 +265,16 @@ body {
   width: 80%;
   position: relative;
   background: #abcc75;
+  border-radius: 0.4em;
+  margin: 10px 12px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.speech-bubble2 {
+  width: 80%;
+  position: relative;
+  background-color: #3bb4c4;
   border-radius: 0.4em;
   margin: 10px 12px;
   padding: 10px;
