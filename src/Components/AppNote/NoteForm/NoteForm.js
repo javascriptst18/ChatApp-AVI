@@ -32,7 +32,7 @@ class NoteForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="chatFooter">
         <input
           // className="noteInput"
           placeholder="Write a new note..."

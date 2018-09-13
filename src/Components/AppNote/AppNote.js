@@ -155,7 +155,7 @@ class AppNote extends Component {
         backdrop = <Backdrop click={this.backdropClickHandler} />;
       }
       return (
-        <div className="mainWrapper">
+        <div className="chatAppWrapper">
           <Toolbar
             drawerClickHandler={this.drawerToggleClickHandler}
             toggleChat={this.toggleChat}
