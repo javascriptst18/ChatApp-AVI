@@ -116,7 +116,6 @@ class ChatApp extends Component {
         </div>
         <div className="chatFooterChat">
           <InputText submitMessage={this.submitMessage} />
-          <button onClick={this.props.logOut}>{this.props.btnName}</button>
         </div>
       </Fragment>
     );

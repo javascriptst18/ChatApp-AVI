@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "reactstrap";
 
 function Message(props) {
   // Only admin users can delete messages
@@ -19,10 +20,12 @@ function Message(props) {
   }
 
   return (
-    <div class="speech-bubble">
-      {messageDelete}
-      {props.textvalue}
+    <div className="speech-bubble2">
       {props.getSender + ": "}
+      <Card className="bg-success">
+        {messageDelete}
+        {props.textvalue}
+      </Card>
       {props.timestamp}
     </div>
   );

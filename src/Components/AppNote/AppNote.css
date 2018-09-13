@@ -271,6 +271,16 @@ body {
   overflow-y: auto;
 }
 
+.speech-bubble2 {
+  width: 80%;
+  position: relative;
+  background-color: #3bb4c4;
+  border-radius: 0.4em;
+  margin: 10px 12px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
 .speech-bubble:after {
   content: "";
   position: absolute;
