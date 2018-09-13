@@ -44,7 +44,6 @@ class NoteForm extends Component {
 
   render() {
     return (
-
       <div className="chatFooter">
         <input
           className="noteInput"
@@ -73,8 +72,6 @@ class NoteForm extends Component {
         >
           Add Note
         </button>
-
-   
       </div>
     );
   }

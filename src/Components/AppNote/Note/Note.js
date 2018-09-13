@@ -25,19 +25,8 @@ class Note extends Component {
     return (
       <div className="note fade-in">
         {messageDelete}
-        {/* <span
-          className="closebtn"
-          onClick={() => this.handleRemoveNote(this.props.noteId)}
-        >
-          <Badge className="text-danger" color="dark">
-            {" "}
-            &times;
-          </Badge>
-        </span> */}
-        {/* <Badge color="success"> */}
         {this.props.noteContent}
         <p>{this.props.eventDate}</p>
-        {/* </Badge> */}
       </div>
     );
   }
