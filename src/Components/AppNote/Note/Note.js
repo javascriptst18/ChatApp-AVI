@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Note.css";
 import PropTypes from "prop-types";
+import { Card } from "reactstrap";
 
 class Note extends Component {
   handleRemoveNote = id => {
@@ -23,10 +24,12 @@ class Note extends Component {
     }
 
     return (
-      <div className="note fade-in">
-        {messageDelete}
-        {this.props.noteContent}
-        <p>{this.props.eventDate}</p>
+      <div className="note fade-in, speech-bubble2 , card-pill">
+        <Card className="card-pill">
+          {messageDelete}
+          <h6>{this.props.noteContent}</h6>
+          <p>{this.props.eventDate}</p>
+        </Card>
       </div>
     );
   }

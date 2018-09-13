@@ -20,13 +20,15 @@ function Message(props) {
   }
 
   return (
-    <div className="speech-bubble2">
-      {props.getSender + ": "}
-      <Card className="bg-success">
-        {messageDelete}
-        {props.textvalue}
+    <div className="speech-bubble2 , card-pill">
+      {messageDelete}
+      <Card className="card-pill">
+        <p className="p1">
+          <em>{props.getSender + ": "}</em>
+        </p>
+        <h6>{props.textvalue}</h6>
+        <p className="p2">{props.timestamp}</p>
       </Card>
-      {props.timestamp}
     </div>
   );
 }

@@ -31,7 +31,7 @@ class InputText extends Component {
   render() {
     const { input } = this.state; // same as ==> const input = this.state.input;
     return (
-      <div className="formWrapper">
+      <div className="chatFooterChat">
         <input
           className="noteInput"
           onFocus={this.clearInput}
@@ -42,7 +42,7 @@ class InputText extends Component {
           onChange={this.handleChange}
         />
         <button
-          className="noteButton"
+          className="noteButtonChat"
           type="submit"
           onClick={() => {
             if (this.state.input === "") {
@@ -53,37 +53,8 @@ class InputText extends Component {
             }
           }}
         >
-          <i
-            className="far fa-arrow-alt-circle-up"
-            style={{ height: "100%", width: "100%" }}
-          />
+          Message
         </button>
-
-        {/* <Input
-          className="noteInput"
-          onFocus={this.clearInput}
-          onBlur={this.setInput}
-          type="textarea"
-          value={this.state.input}
-          placeholder={this.state.inputPlaceholder}
-          onChange={this.handleChange}
-        />
-
-        <Button
-          className="noteButton"
-          color="success"
-          type="submit"
-          onClick={() => {
-            if (this.state.input === "") {
-              this.emptyWarning();
-            } else {
-              this.props.submitMessage(input);
-              this.setState({ input: "" });
-            }
-          }}
-        >
-          send your avi
-        </Button> */}
       </div>
     );
   }
