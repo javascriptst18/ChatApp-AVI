@@ -10,7 +10,7 @@ const drawerToggleButton = props => (
         <i className="fas fa-bars" />
       </button>
       <div className="spacer" />
-      <button className="notesLogout" onClick={props.logOut}>
+      <button className="notesLogout" onClick={props.onClick}>
         {props.btnName}
       </button>
     </div>

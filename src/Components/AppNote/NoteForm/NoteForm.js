@@ -24,7 +24,7 @@ class NoteForm extends Component {
   writeNote = event => {
     // call a method that sets the noteContent for a note to
     // the value of the input
-    event.preventDefault();
+
     this.props.addNote(
       this.state.newNoteContent,
       this.state.newNoteDateContent
@@ -54,7 +54,7 @@ class NoteForm extends Component {
             type="textarea"
           />
           <input
-            type="datetime-local"
+            type="date"
             onChange={this.handleDateInput}
             value={this.state.newNoteDateContent}
           />
