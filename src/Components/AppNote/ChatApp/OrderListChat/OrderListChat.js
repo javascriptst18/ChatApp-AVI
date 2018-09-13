@@ -21,7 +21,7 @@ class OrderListChat extends Component {
       .database()
       .ref()
       .child("notes")
-      // .orderByChild("createdAt")
+      .orderByChild("eventDate")
       .limitToFirst(5)
       .on("value", snap => {
         const updates = toArray(snap.val());
@@ -35,7 +35,7 @@ class OrderListChat extends Component {
       return (
         <div className="formWrapper">
           <div className="noteContent" key={i}>
-            {note.createdAt}
+            {note.eventDate}
             {note.noteContent}
           </div>
         </div>

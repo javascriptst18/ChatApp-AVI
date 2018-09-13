@@ -32,7 +32,8 @@ class AppNote extends Component {
         previousNotes.push({
           id: snap.key,
           noteContent: snap.val().noteContent,
-          createdAt: snap.val().createdAt
+          createdAt: snap.val().createdAt,
+          eventDate: snap.val().eventDate
         });
 
         this.setState({
@@ -57,7 +58,7 @@ class AppNote extends Component {
       });
   }
 
-  addNote = note => {
+  addNote = (note, date) => {
     const currentDateAndTime = this.fetchCurrentDate();
     firebase
       .database()
@@ -66,7 +67,8 @@ class AppNote extends Component {
       .push()
       .set({
         noteContent: note,
-        createdAt: currentDateAndTime
+        createdAt: currentDateAndTime,
+        eventDate: date
       });
   };
 
@@ -122,6 +124,7 @@ class AppNote extends Component {
         noteContent={note.noteContent}
         createdAt={note.createdAt}
         user={this.props.user}
+        eventDate={note.eventDate}
       />
     ));
     if (this.state.showNotes) {
