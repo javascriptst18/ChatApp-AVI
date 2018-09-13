@@ -11,14 +11,14 @@ const sideDrawer = props => {
       <ul>
         <li>
           <a onClick={props.toggleNotes}>
-            Notes
+            <h1>Notes</h1>
             <br />
             <i className="far fa-sticky-note" />
           </a>
         </li>
         <li>
           <a onClick={props.toggleChat}>
-            Chat
+            <h1>Chat</h1>
             <br />
             <i className="far fa-comments" />
           </a>

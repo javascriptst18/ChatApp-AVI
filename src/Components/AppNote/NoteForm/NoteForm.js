@@ -70,7 +70,7 @@ class NoteForm extends Component {
             }
           }}
         >
-          Add Note
+          Note
         </button>
       </div>
     );
