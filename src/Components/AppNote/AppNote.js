@@ -129,11 +129,10 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
-        <div class="media-body">
-          <h2 class="mt-0">Notes</h2>
-
+        <div>
+          <h2>Notes</h2>
           {toDoList}
-          <NoteForm addNote={this.addNote} />
+          <NoteForm className="chatFooter" addNote={this.addNote} />
         </div>
       );
     }
@@ -142,7 +141,7 @@ class AppNote extends Component {
   renderChat = () => {
     if (this.state.showChat) {
       return (
-        <div className="chatAppWrapper">
+        <div className="chatAppWrapperChat">
           <ChatApp user={this.props.user} logIn={this.props.logIn} />
         </div>
       );

@@ -44,36 +44,37 @@ class NoteForm extends Component {
 
   render() {
     return (
-      <div>
-        <form>
-          <input
-            // className="noteInput"
-            placeholder="Write a new note..."
-            value={this.state.newNoteContent}
-            onChange={this.handleUserInput}
-            type="textarea"
-          />
-          <input
-            type="date"
-            onChange={this.handleDateInput}
-            value={this.state.newNoteDateContent}
-          />
-          <button
-            className="noteButton"
-            onClick={() => {
-              if (
-                this.state.newNoteContent === "" ||
-                this.state.newNoteDateContent === ""
-              ) {
-                this.emptyWarning();
-              } else {
-                this.writeNote();
-              }
-            }}
-          >
-            Add Note
-          </button>
-        </form>
+
+      <div className="chatFooter">
+        <input
+          className="noteInput"
+          placeholder="Write a new note..."
+          value={this.state.newNoteContent}
+          onChange={this.handleUserInput}
+          type="textarea"
+        />
+        <input
+          type="date"
+          onChange={this.handleDateInput}
+          value={this.state.newNoteDateContent}
+        />
+        <button
+          className="noteButtonNote"
+          onClick={() => {
+            if (
+              this.state.newNoteContent === "" ||
+              this.state.newNoteDateContent === ""
+            ) {
+              this.emptyWarning();
+            } else {
+              this.writeNote();
+            }
+          }}
+        >
+          Add Note
+        </button>
+
+   
       </div>
     );
   }

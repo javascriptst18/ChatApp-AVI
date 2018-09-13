@@ -99,11 +99,11 @@ class ChatApp extends Component {
   render() {
     return (
       <Fragment>
-        <h4 className="text-warning">{this.props.user}</h4>
+        <h4>{this.props.user}</h4>
         <OrderListChat renderLastFive={this.renderLastFive} />
         <br />
         <div className="mainChatAppWrapper">
-          <ol>{this.currentMessage(this.state.messages)}</ol>
+          {this.currentMessage(this.state.messages)}
           <div
             style={{ float: "left", clear: "both" }}
             ref={el => {
@@ -114,7 +114,7 @@ class ChatApp extends Component {
           cardet ska ha position relative och bilden som läggs in i cardet ska ha position absolute
           bilden ska ha 50px top-25 left -25  */}
         </div>
-        <div className="chatFooter">
+        <div className="chatFooterChat">
           <InputText submitMessage={this.submitMessage} />
           <button onClick={this.props.logOut}>{this.props.btnName}</button>
         </div>
