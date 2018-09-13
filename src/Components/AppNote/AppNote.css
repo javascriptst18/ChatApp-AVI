@@ -70,6 +70,8 @@ body {
   width: 100%;
   overflow-y: scroll;
   background-color: #f4f8f8;
+  display: flex;
+  justify-content: center;
 }
 
 .chatAppWrapper {
@@ -127,7 +129,7 @@ body {
 .chatFooterChat input {
   margin: 0 0.5%;
   padding: 1% 0;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .chatFooter {
@@ -251,14 +253,13 @@ body {
   background-color: pink;
 }
 
-.noteButtonChat:hover {
-  background-color: #02ba85;
-  color: #fff;
-  transition: 0.2s ease-out;
+.noteButtonflexContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-
 .noteButtonNote {
-  width: 20%;
+  width: 100%;
   font-size: 10px;
   padding: 5%;
   border: 2px solid hsla(0, 0%, 0%, 0.9);
@@ -325,4 +326,17 @@ body {
 
 .p2 {
   font-size: 8px;
+}
+
+.p3 {
+  padding-right: 14px;
+  font-size: 14px;
+}
+
+.fa-trash {
+  color: #94b6d8;
+}
+
+.btnDeleteNote {
+  margin-top: 8px;
 }

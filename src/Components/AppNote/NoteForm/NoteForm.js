@@ -57,21 +57,23 @@ class NoteForm extends Component {
           onChange={this.handleDateInput}
           value={this.state.newNoteDateContent}
         />
-        <button
-          className="noteButtonNote"
-          onClick={() => {
-            if (
-              this.state.newNoteContent === "" ||
-              this.state.newNoteDateContent === ""
-            ) {
-              this.emptyWarning();
-            } else {
-              this.writeNote();
-            }
-          }}
-        >
-          Note
-        </button>
+        <div className="noteButtonflexContainer">
+          <button
+            className="noteButtonNote"
+            onClick={() => {
+              if (
+                this.state.newNoteContent === "" ||
+                this.state.newNoteDateContent === ""
+              ) {
+                this.emptyWarning();
+              } else {
+                this.writeNote();
+              }
+            }}
+          >
+            <p className="p3">Note</p>
+          </button>
+        </div>
       </div>
     );
   }

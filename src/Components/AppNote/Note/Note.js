@@ -13,10 +13,13 @@ class Note extends Component {
       display: "none"
     };
     let messageDelete;
-    if (this.props.user === ("Vicente Tirado", "Alan. ATB")) {
+    if (this.props.user === "Alan. ATB") {
       messageDelete = (
-        <button onClick={() => this.handleRemoveNote(this.props.noteId)}>
-          Delete
+        <button
+          className="btnDeleteNote"
+          onClick={() => this.handleRemoveNote(this.props.noteId)}
+        >
+          <i class="fas fa-trash" />
         </button>
       );
     } else {
@@ -26,10 +29,10 @@ class Note extends Component {
     return (
       <div className="note fade-in, speech-bubble2 , card-pill">
         <Card className="card-pill">
-          {messageDelete}
           <h6>{this.props.noteContent}</h6>
           <p>{this.props.eventDate}</p>
         </Card>
+        {messageDelete}
       </div>
     );
   }
