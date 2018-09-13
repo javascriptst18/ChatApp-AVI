@@ -36,7 +36,7 @@ class Note extends Component {
         </span> */}
         {/* <Badge color="success"> */}
         {this.props.noteContent}
-        <p>{this.props.createdAt} </p>
+        <p>{this.props.eventDate} </p>
         {/* </Badge> */}
       </div>
     );

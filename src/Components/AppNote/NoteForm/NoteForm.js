@@ -3,7 +3,8 @@ import "./NoteForm.css";
 
 class NoteForm extends Component {
   state = {
-    newNoteContent: ""
+    newNoteContent: "",
+    newNoteDateContent: ""
   };
 
   // When the user input changes, set the newNoteContent
@@ -14,14 +15,25 @@ class NoteForm extends Component {
     });
   };
 
-  writeNote = () => {
+  handleDateInput = e => {
+    this.setState({
+      newNoteDateContent: e.target.value
+    });
+  };
+
+  writeNote = event => {
     // call a method that sets the noteContent for a note to
     // the value of the input
-    this.props.addNote(this.state.newNoteContent);
+    event.preventDefault();
+    this.props.addNote(
+      this.state.newNoteContent,
+      this.state.newNoteDateContent
+    );
 
     // Set newNoteContent back to an empty string.
     this.setState({
-      newNoteContent: ""
+      newNoteContent: "",
+      newNoteDateContent: ""
     });
   };
 
@@ -33,25 +45,35 @@ class NoteForm extends Component {
   render() {
     return (
       <div>
-        <input
-          // className="noteInput"
-          placeholder="Write a new note..."
-          value={this.state.newNoteContent}
-          onChange={this.handleUserInput}
-          type="textarea"
-        />
-        <button
-          className="noteButton"
-          onClick={() => {
-            if (this.state.newNoteContent === "") {
-              this.emptyWarning();
-            } else {
-              this.writeNote();
-            }
-          }}
-        >
-          Add Note
-        </button>
+        <form>
+          <input
+            // className="noteInput"
+            placeholder="Write a new note..."
+            value={this.state.newNoteContent}
+            onChange={this.handleUserInput}
+            type="textarea"
+          />
+          <input
+            type="datetime-local"
+            onChange={this.handleDateInput}
+            value={this.state.newNoteDateContent}
+          />
+          <button
+            className="noteButton"
+            onClick={() => {
+              if (
+                this.state.newNoteContent === "" ||
+                this.state.newNoteDateContent === ""
+              ) {
+                this.emptyWarning();
+              } else {
+                this.writeNote();
+              }
+            }}
+          >
+            Add Note
+          </button>
+        </form>
       </div>
     );
   }
