@@ -59,7 +59,12 @@ class AppNote extends Component {
   }
 
   addNote = (note, date) => {
+    // function formatDate(oldDate) {
+    //   return `${oldDate}, 00:00:00 `;
+    // }
+
     const currentDateAndTime = this.fetchCurrentDate();
+    const dateAsCounter = Date.parse(date);
     firebase
       .database()
       .ref()
@@ -68,7 +73,8 @@ class AppNote extends Component {
       .set({
         noteContent: note,
         createdAt: currentDateAndTime,
-        eventDate: date
+        eventDate: date,
+        orderedEventDate: dateAsCounter
       });
   };
 

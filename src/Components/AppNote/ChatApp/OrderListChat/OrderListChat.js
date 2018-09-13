@@ -21,11 +21,10 @@ class OrderListChat extends Component {
       .database()
       .ref()
       .child("notes")
-      .orderByChild("eventDate")
+      .orderByChild("orderedEventDate")
       .limitToFirst(5)
       .on("value", snap => {
         const updates = toArray(snap.val());
-        console.log(updates);
         this.setState({ notes: updates });
       });
   };
