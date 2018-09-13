@@ -8,6 +8,7 @@ const toolbar = props => (
     btnName={props.btnName}
     onClick={props.logOut}
   />
+
 );
 
 export default toolbar;
