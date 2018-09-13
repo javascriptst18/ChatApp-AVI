@@ -102,7 +102,7 @@ class ChatApp extends Component {
         <h4>{this.props.user}</h4>
         <OrderListChat renderLastFive={this.renderLastFive} />
         <br />
-        <div className="mainChatAppWrapper">
+        <div>
           {this.currentMessage(this.state.messages)}
           <div
             style={{ float: "left", clear: "both" }}

@@ -129,7 +129,7 @@ class AppNote extends Component {
     ));
     if (this.state.showNotes) {
       return (
-        <div>
+        <div className="chatAppWrapper">
           <h2>Notes</h2>
           {toDoList}
           <NoteForm className="chatFooter" addNote={this.addNote} />
@@ -157,7 +157,7 @@ class AppNote extends Component {
         backdrop = <Backdrop click={this.backdropClickHandler} />;
       }
       return (
-        <div className="chatAppWrapper">
+        <div>
           <Toolbar
             drawerClickHandler={this.drawerToggleClickHandler}
             toggleChat={this.toggleChat}
