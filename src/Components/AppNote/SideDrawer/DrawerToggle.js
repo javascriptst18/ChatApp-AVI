@@ -11,6 +11,8 @@ const drawerToggleButton = props => (
       <i className="fas fa-bars" />
     </button>
     <div className="spacer" />
+    <img src={props.user.photoURL} className="card-img" alt="User" />
+
     <button className="notesLogout" onClick={props.onClick}>
       {props.btnName}
     </button>

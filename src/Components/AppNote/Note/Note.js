@@ -12,7 +12,7 @@ class Note extends Component {
       display: "none"
     };
     let messageDelete;
-    if (this.props.user === ("Vicente Tirado", "Alan. ATB")) {
+    if (this.props.user.displayName === ("Vicente Tirado", "Alan. ATB")) {
       messageDelete = (
         <button onClick={() => this.handleRemoveNote(this.props.noteId)}>
           Delete
