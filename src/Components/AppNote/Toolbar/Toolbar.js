@@ -7,6 +7,7 @@ const toolbar = props => (
     click={props.drawerClickHandler}
     btnName={props.btnName}
     onClick={props.onClick}
+    user={props.user}
   />
 );
 

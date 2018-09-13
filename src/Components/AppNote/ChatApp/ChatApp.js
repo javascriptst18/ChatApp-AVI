@@ -62,7 +62,7 @@ class ChatApp extends Component {
 
   submitMessage = value => {
     const nextMessage = {
-      sender: this.props.user,
+      sender: this.props.user.displayName,
       timestamp: this.getCurrentDate(),
       uniquePostId: firebase.database.ServerValue.TIMESTAMP,
       text: value // argument passed in submitMessage function
@@ -89,7 +89,7 @@ class ChatApp extends Component {
         textvalue={message.content.text}
         timestamp={message.content.timestamp}
         getSender={message.content.sender}
-        user={this.props.user}
+        user={this.props.user.displayName}
         deleteMessage={this.deleteMessage}
         keyDelete={message.id}
       />
@@ -99,7 +99,7 @@ class ChatApp extends Component {
   render() {
     return (
       <Fragment>
-        <h4>{this.props.user}</h4>
+        <h4>{this.props.user.displayName}</h4>
         <OrderListChat renderLastFive={this.renderLastFive} />
         <br />
         <div>
