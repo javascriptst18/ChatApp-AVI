@@ -21,7 +21,7 @@ function Message(props) {
   return (
     <div class="speech-bubble">
       {messageDelete}
-      <p>{props.textvalue}</p>
+      {props.textvalue}
       {props.getSender + ": "}
       {props.timestamp}
     </div>

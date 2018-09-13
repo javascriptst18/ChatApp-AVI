@@ -19,7 +19,7 @@ class Note extends Component {
         </button>
       );
     } else {
-      messageDelete = <button style={none}>Nothing</button>;
+      messageDelete = <button style={none}>Delete</button>;
     }
 
     return (
@@ -36,7 +36,7 @@ class Note extends Component {
         </span> */}
         {/* <Badge color="success"> */}
         {this.props.noteContent}
-        <p>{this.props.eventDate} </p>
+        <p>{this.props.eventDate}</p>
         {/* </Badge> */}
       </div>
     );
