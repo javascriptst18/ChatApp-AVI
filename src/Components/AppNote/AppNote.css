@@ -328,6 +328,7 @@ body {
   font-size: 8px;
 }
 
+
 .p3 {
   padding-right: 14px;
   font-size: 14px;
@@ -339,4 +340,13 @@ body {
 
 .btnDeleteNote {
   margin-top: 8px;
+
+img.card-img {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 1.15rem;
+  opacity: 0.85;
+  border: 4px solid black;
+  margin: 0;
+
 }

@@ -59,12 +59,7 @@ class AppNote extends Component {
   }
 
   addNote = (note, date) => {
-    // function formatDate(oldDate) {
-    //   return `${oldDate}, 00:00:00 `;
-    // }
-
     const currentDateAndTime = this.fetchCurrentDate();
-    const dateAsCounter = Date.parse(date);
     firebase
       .database()
       .ref()
@@ -73,8 +68,7 @@ class AppNote extends Component {
       .set({
         noteContent: note,
         createdAt: currentDateAndTime,
-        eventDate: date,
-        orderedEventDate: dateAsCounter
+        eventDate: date
       });
   };
 
@@ -156,7 +150,7 @@ class AppNote extends Component {
 
   renderPageIfLoggedIn = () => {
     if (this.props.user) {
-      // detta ska bli this.props.user
+      // det var bara user tidigare
       let backdrop;
       if (this.state.sideDrawerOpen) {
         // passing a referens to the function that takes back the sideDrawerOpen
@@ -170,6 +164,7 @@ class AppNote extends Component {
             toggleNotes={this.toggleNotes}
             onClick={this.props.logOut}
             btnName={this.props.btnName}
+            user={this.props.user}
           />
           <SideDrawer
             show={this.state.sideDrawerOpen}

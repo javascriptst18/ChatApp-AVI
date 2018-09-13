@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import firebase from "../../../Firebase/firebase";
 
-function toArray(firebaseObject) {
-  let array = [];
-  for (let item in firebaseObject) {
-    array.push({ ...firebaseObject[item], key: item });
-  }
-  return array;
-}
 class OrderListChat extends Component {
   state = {
     notes: []
@@ -21,11 +14,14 @@ class OrderListChat extends Component {
       .database()
       .ref()
       .child("notes")
-      .orderByChild("orderedEventDate")
+      .orderByChild("eventDate")
       .limitToFirst(5)
       .on("value", snap => {
-        const updates = toArray(snap.val());
-        this.setState({ notes: updates });
+        let temp = [];
+        snap.forEach(child => {
+          temp.push(child.val());
+        });
+        this.setState({ notes: temp });
       });
   };
   render() {
