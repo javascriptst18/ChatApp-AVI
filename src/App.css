@@ -1,22 +1,26 @@
-* {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html,
 body {
+  /* box-sizing: border-box; */
   display: flex;
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #cac5c5;
+  background-color: #f4f8f8;
 }
 
-body {
+/* body {
   width: 100%;
   min-height: 100%;
   background-attachment: fixed;
   background-size: cover;
 }
+ */
 /* 
 * {
   height: 100%;

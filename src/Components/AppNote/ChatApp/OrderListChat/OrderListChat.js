@@ -28,15 +28,17 @@ class OrderListChat extends Component {
     const { notes } = this.state;
     const renderLastFive = notes.map((note, i) => {
       return (
-        <div className="formWrapper">
-          <div className="noteContent" key={i}>
-            {note.eventDate}
-            {note.noteContent}
-          </div>
+        <div className="cardOrderlist" key={i}>
+          <ul>
+            <li>
+              {note.eventDate}
+              {note.noteContent}
+            </li>
+          </ul>
         </div>
       );
     });
-    return <div>{renderLastFive}</div>;
+    return <div className="cardWrapper">{renderLastFive}</div>;
   }
 }
 

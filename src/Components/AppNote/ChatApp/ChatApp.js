@@ -3,6 +3,7 @@ import InputText from "./InputText/InputText";
 import firebase from "../../Firebase/firebase";
 import Message from "./Message/Message";
 import OrderListChat from "./OrderListChat/OrderListChat";
+// import Toggle from "./Toggle";
 
 class ChatApp extends Component {
   state = {
@@ -89,7 +90,7 @@ class ChatApp extends Component {
         textvalue={message.content.text}
         timestamp={message.content.timestamp}
         getSender={message.content.sender}
-        user={this.props.user.displayName}
+        user={this.props.user}
         deleteMessage={this.deleteMessage}
         keyDelete={message.id}
       />
@@ -99,10 +100,8 @@ class ChatApp extends Component {
   render() {
     return (
       <Fragment>
-        <h4>{this.props.user.displayName}</h4>
-        <OrderListChat renderLastFive={this.renderLastFive} />
         <br />
-        <div>
+        <div className="containerMessage">
           {this.currentMessage(this.state.messages)}
           <div
             style={{ float: "left", clear: "both" }}
@@ -110,13 +109,12 @@ class ChatApp extends Component {
               this.messagesEnd = el;
             }}
           />
+
           {/* lägg diven här diven ska innehålla ett card tillsammans med meddelanden
           cardet ska ha position relative och bilden som läggs in i cardet ska ha position absolute
           bilden ska ha 50px top-25 left -25  */}
         </div>
-        <div className="chatFooterChat">
-          <InputText submitMessage={this.submitMessage} />
-        </div>
+        <InputText submitMessage={this.submitMessage} />
       </Fragment>
     );
   }

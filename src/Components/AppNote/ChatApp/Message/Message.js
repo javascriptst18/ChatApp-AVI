@@ -7,10 +7,10 @@ function Message(props) {
     display: "none"
   };
   let messageDelete;
-  if (props.user === "Alan. ATB") {
+  if (props.user.displayName === "Alan. ATB") {
     messageDelete = (
       <button
-        className="btnDeleteNote"
+        className="btnDeleteChat"
         onClick={() => {
           props.deleteMessage(props.keyDelete);
         }}
@@ -24,6 +24,7 @@ function Message(props) {
 
   return (
     <div className="speech-bubble2 , card-pill">
+      <img src={props.user.photoURL} className="card-img" alt="User" />
       <Card className="card-pill">
         <p className="p1">
           <em>{props.getSender + ": "}</em>
