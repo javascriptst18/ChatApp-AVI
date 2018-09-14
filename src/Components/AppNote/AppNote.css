@@ -133,8 +133,10 @@ body {
 .chatFooterChat {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -149,17 +151,19 @@ body {
   background-color: hsl(180, 22%, 90%);
 }
 
-.chatFooterChat input {
+/* .chatFooterChat input {
   margin: 0 0.5%;
   padding: 1% 0;
   font-size: 16px;
-}
+} */
 
 .chatFooter {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -175,9 +179,13 @@ body {
 }
 
 .chatFooter input {
-  margin: 0 0.5%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+  /* margin: 0 0.5%;
   padding: 1% 0;
-  font-size: 10px;
+  font-size: 1em; */
 }
 
 .far {
@@ -263,12 +271,14 @@ body {
 } */
 
 .noteButtonChat {
-  width: 20%;
-  font-size: 10px;
-  padding: 5%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  font-size: 1em;
+  /* padding: 5%; */
   border: 2px solid hsla(0, 0%, 0%, 0.9);
   border-radius: 5%;
-  margin: 0 2%;
+  margin: 0 auto;
   text-align: center;
   overflow: hidden;
   outline: none;
@@ -283,9 +293,12 @@ body {
 } */
 
 .noteButtonNote {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
   width: 100%;
   font-size: 10px;
-  padding: 5%;
+  /* padding: 5%; */
   border: 2px solid hsla(0, 0%, 0%, 0.9);
   border-radius: 5%;
   margin: 0 2%;
@@ -297,6 +310,9 @@ body {
 }
 
 .noteInput {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
   width: 65%;
   font-size: 1em;
   /* margin: 16px 8px; */
@@ -353,8 +369,8 @@ body {
 }
 
 .p3 {
-  padding-right: 14px;
-  font-size: 14px;
+  /* padding-right: 14px; */
+  font-size: 1em;
 }
 
 .fa-trash {
