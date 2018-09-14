@@ -14,8 +14,7 @@ class Note extends Component {
     };
     let messageDelete;
 
-    if (this.props.user === "Alan. ATB") {
-
+    if (this.props.user.displayName === "Alan. ATB") {
       messageDelete = (
         <button
           className="btnDeleteNote"

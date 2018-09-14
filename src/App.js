@@ -20,7 +20,7 @@ class App extends Component {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.setState({
-          user: user, // user.displayName
+          user: user,
           currentScreen: "AVIchat",
           btnName: "Log out"
         });
