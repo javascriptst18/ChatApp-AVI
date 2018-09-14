@@ -101,7 +101,7 @@ class ChatApp extends Component {
     return (
       <Fragment>
         <br />
-        <div>
+        <div className="containerMessage">
           {this.currentMessage(this.state.messages)}
           <div
             style={{ float: "left", clear: "both" }}
@@ -114,9 +114,7 @@ class ChatApp extends Component {
           cardet ska ha position relative och bilden som läggs in i cardet ska ha position absolute
           bilden ska ha 50px top-25 left -25  */}
         </div>
-        <div className="chatFooterChat">
-          <InputText submitMessage={this.submitMessage} />
-        </div>
+        <InputText submitMessage={this.submitMessage} />
       </Fragment>
     );
   }

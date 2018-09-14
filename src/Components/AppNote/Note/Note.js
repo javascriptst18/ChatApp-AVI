@@ -31,7 +31,7 @@ class Note extends Component {
       <div className="note fade-in, speech-bubble2 , card-pill">
         <Card className="card-pill">
           <h6>{this.props.noteContent}</h6>
-          <p>{this.props.eventDate}</p>
+          <p className="p2">{this.props.eventDate}</p>
         </Card>
         {messageDelete}
       </div>

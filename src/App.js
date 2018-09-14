@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     user: "",
     currentScreen: "LoginScreen",
-    btnName: "Google Log in"
+    btnName: "Google Login"
   };
 
   componentDidMount() {
@@ -22,12 +22,12 @@ class App extends Component {
         this.setState({
           user: user,
           currentScreen: "AVIchat",
-          btnName: "Log out"
+          btnName: "Logout"
         });
       } else {
         this.setState({
           currentScreen: "LoginScreen",
-          btnName: "Google Log in"
+          btnName: "Google Login"
         });
       }
     });
@@ -47,11 +47,13 @@ class App extends Component {
     // There is a logged in user = TRUE
     if (this.state.currentScreen === "AVIchat") {
       return (
-        <AppNote
-          btnName={this.state.btnName}
-          logOut={this.logOut}
-          user={this.state.user}
-        />
+        <div className="wrapper">
+          <AppNote
+            btnName={this.state.btnName}
+            logOut={this.logOut}
+            user={this.state.user}
+          />
+        </div>
       );
     }
     // There is a logged in user = FALSE

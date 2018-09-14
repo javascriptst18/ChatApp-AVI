@@ -47,19 +47,20 @@ class NoteForm extends Component {
       <div className="chatFooter">
         <input
           className="noteInput"
-          placeholder="Write a new note..."
+          placeholder="Notes here..."
           value={this.state.newNoteContent}
           onChange={this.handleUserInput}
           type="textarea"
         />
         <input
+          className="dateInput"
           type="date"
           onChange={this.handleDateInput}
           value={this.state.newNoteDateContent}
         />
         <div className="noteButtonflexContainer">
           <button
-            className="noteButtonNote"
+            className="noteButtonChat"
             onClick={() => {
               if (
                 this.state.newNoteContent === "" ||
