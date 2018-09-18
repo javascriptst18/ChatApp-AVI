@@ -7,7 +7,7 @@ function Message(props) {
     display: "none"
   };
   let messageDelete;
-  if (props.user.displayName === "Alan. ATB") {
+  if (props.user.displayName === "Vicente Tirado") {
     messageDelete = (
       <button
         className="btnDeleteChat"

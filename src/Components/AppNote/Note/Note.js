@@ -14,7 +14,7 @@ class Note extends Component {
     };
     let messageDelete;
 
-    if (this.props.user.displayName === "Alan. ATB") {
+    if (this.props.user.displayName === "Vicente Tirado") {
       messageDelete = (
         <button
           className="btnDeleteNote"
@@ -31,6 +31,7 @@ class Note extends Component {
       <div className="note fade-in, speech-bubble2 , card-pill">
         <Card className="card-pill">
           <h6>{this.props.noteContent}</h6>
+
           <p className="p2">{this.props.eventDate}</p>
         </Card>
         {messageDelete}
