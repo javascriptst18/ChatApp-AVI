@@ -1,0 +1,27 @@
+.login {
+  padding-top: 6rem;
+  text-align: center;
+}
+
+.login-header {
+  color: rgb(54, 38, 38);
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.login-btn {
+  color: rgb(8, 56, 16);
+  background-color: transparent;
+  font-weight: 800;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.4rem;
+  border: 0.2rem solid rgb(54, 38, 38);
+}
+
+.login-btn:hover {
+  color: #757ab6;
+  font-weight: 400;
+  background-color: rgb(54, 38, 38);
+  border: none;
+}
