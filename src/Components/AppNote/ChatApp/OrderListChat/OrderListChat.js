@@ -32,7 +32,7 @@ class OrderListChat extends Component {
           <ul>
             <li>
               {note.eventDate}
-              {note.noteContent}
+              <h6>{note.noteContent}</h6>
             </li>
           </ul>
         </div>
