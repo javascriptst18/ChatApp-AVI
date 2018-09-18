@@ -53,7 +53,7 @@ class InputText extends Component {
             }
           }}
         >
-          Message
+          <p className="p3">Message</p>
         </button>
       </div>
     );
